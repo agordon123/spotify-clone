@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import {
   useSessionContext,
   useSupabaseClient,
-  useUser,
+
 } from "@supabase/auth-helpers-react";
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";

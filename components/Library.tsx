@@ -1,18 +1,30 @@
 "use client";
+
+
 import { TbPlaylist } from "react-icons/tb";
-import {AiOutlinePlus} from "react-icons/ai";
+import { AiOutlinePlus } from "react-icons/ai";
+
+
 import useAuthModal from "@/hooks/useAuthModal";
 import { useUser } from "@/hooks/useUser";
 import useUploadModal from "@/hooks/useAuthModal";
+
+
+
+
 const Library = () => {
-  const uploadModal  = useUploadModal();
+  const uploadModal = useUploadModal();
   const authModal = useAuthModal();
   const { user } = useUser();
   const onClick = () => {
+    console.log(user);
     if (!user) {
+      console.log(!user);
       return authModal.onOpen();
     }
+   return uploadModal.onOpen();
   };
+
   return (
     <div className="flex flex-col">
       <div className="flex items-center justify-between px-5 py-4">
@@ -27,7 +39,6 @@ const Library = () => {
             size={26}
             className="text-neutral-400 cursor-pointer hover:text-white transition"
           />{" "}
-          
         </div>
       </div>
     </div>

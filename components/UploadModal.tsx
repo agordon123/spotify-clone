@@ -1,16 +1,19 @@
 "use client";
-
-import useUploadModal from "@/hooks/useUploadModal";
-import Modal from "./Modal";
-import { FieldValues, useForm, SubmitHandler } from "react-hook-form";
-import { useState } from "react";
 import Input from "./Input";
 import Button from "./Button";
+import useUploadModal from "@/hooks/useUploadModal";
+import Modal from "./Modal";
 import { useUser } from "@/hooks/useUser";
+
+import { FieldValues, useForm, SubmitHandler } from "react-hook-form";
+import { useState } from "react";
 import { toast } from "react-hot-toast";
 import uniqid from "uniqid";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import { useRouter } from "next/navigation";
+
+
+
 const UploadModal = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
@@ -129,7 +132,7 @@ const UploadModal = () => {
             disabled={isLoading}
             {...register("song", { required: true })}
           />
-          <Button disabled={isLoading} type="submit" className="w-full" />
+          <Button disabled={isLoading} type="submit"  > Create</Button>
         </div>
       </form>
     </Modal>
